@@ -1,0 +1,19 @@
+web:
+    image: nginx:latest
+    ports:
+        - "8080:80"
+    volumes:
+        - ../application:/application
+        - ./nginx/site.conf:/etc/nginx/conf.d/default.conf
+    links:
+        - php
+php:
+    image: php:7.2-fpm
+    container_name: php
+    volumes:
+        - ../application:/application
+develop:
+    image: ubuntu:latest
+    container_name: develop
+    volumes:
+        - ../application:/application

@@ -1,0 +1,57 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8" />
+    <title>Making your first Phaser 3 Game - Part 10</title>
+    <script src="/js/phaser.min.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="example"></div>
+
+<script type="text/javascript">
+
+var config = {
+    type: Phaser.AUTO,
+    // width: 800,
+    // height: 600,
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 300 },
+            debug: false
+        }
+    },
+    // parent: 'example',
+    scene: {
+        preload: preload,
+        create: create
+    }
+};
+
+// var game = new Phaser.Game(config);
+var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create });
+
+function preload() {
+    //  The second parameter is the URL of the image (relative)
+    game.load.image('einstein', 'ra_einstein.png');
+
+}
+
+function create() {
+
+    var s = game.add.sprite(80, 0, 'einstein');
+
+    // s.rotation = 0.14;
+
+}
+
+</script>
+
+</body>
+</html>
