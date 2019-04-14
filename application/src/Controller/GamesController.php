@@ -22,6 +22,7 @@ class GamesController extends AbstractController
 
     /**
     * @Route("/games/example")
+    * @Route("/")
     */
     public function index(): Response
     {

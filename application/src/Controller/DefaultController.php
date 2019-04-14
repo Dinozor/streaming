@@ -10,7 +10,7 @@ class DefaultController extends AbstractController
 {
 
     /**
-    * @Route("/")
+    * @Route("/tests")
     */
     public function index(): Response
     {
